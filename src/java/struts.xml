@@ -1,0 +1,28 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="default" extends="struts-default">
+        <action name="createcenter" class="operations.CenterController" method="execute">
+            <result name="success">/JSP/CreateCenter.jsp</result>
+            
+            
+        </action>
+        <action name="login" class="operations.LoginController">
+            <result name="false">/JSP/LogIn.jsp</result>
+            <result name="Administrador">/JSP/AdministratorMenu.jsp</result>
+            <result name="Doctor">/JSP/DoctorsMenu.jsp</result>
+            <result name="Enfermero">/JSP/NurseMenu.jsp</result>
+            <result name="Paciente">/JSP/PatientMenu.jsp</result>
+            <result name="Secretario">/JSP/SecretaryMenu.jsp</result>
+            
+        </action>
+        <action name="getCenters" class="operations.CenterController" method="getAllCenters">
+            <result name="success">/JSP/CenterList.jsp</result>
+            
+            
+        </action>
+    </package>
+</struts>
