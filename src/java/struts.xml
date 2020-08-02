@@ -17,10 +17,14 @@
             <result name="Enfermero">/JSP/NurseMenu.jsp</result>
             <result name="Paciente">/JSP/PatientMenu.jsp</result>
             <result name="Secretario">/JSP/SecretaryMenu.jsp</result>
-            
         </action>
         <action name="getCenters" class="operations.CenterController" method="getAllCenters">
             <result name="success">/JSP/CenterList.jsp</result>
+            
+            
+        </action>
+        <action name="registerpacient" class="operations.PacientController" method="execute">
+            <result name="success">/JSP/PacientRegister.jsp</result>
             
             
         </action>
