@@ -5,8 +5,8 @@
  */
 package dao;
 
-//import bean.Area;
-//import bean.Treatments;
+import bean.Area;
+import bean.Treatments;
 import bean.Worker;
 import bean.center;
 import java.sql.CallableStatement;
@@ -104,7 +104,7 @@ public class WorkerDAO {
         return listWorker;
 
     }
-  /*  
+    
     public boolean areaRegister(Area area) {
         long time = System.currentTimeMillis();
         java.sql.Date d = new java.sql.Date(time);
@@ -122,7 +122,7 @@ public class WorkerDAO {
         } catch (Exception e) {
             return false;
         }
-    }*/
+    }
     
     public void deleteWorker(Worker worker) {
         String delete = "delete  from funcionario where nombre='" + worker.getName() + "'";

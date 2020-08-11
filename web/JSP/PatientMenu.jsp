@@ -1,9 +1,10 @@
 <%-- 
     Document   : PatientMenu
-    Created on : 25-jul-2020, 20:37:46
-    Author     : jabre
+    Created on : 08-ago-2020, 21:07:06
+    Author     : samoy
 --%>
 
+<%@page import="operations.HospitalizedController"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -32,8 +33,6 @@
     <body id="page-top">
 
 
-
-
         <!-- Portfolio -->
         <section class="content-section" id="portfolio">
             <div class="container text-center my-auto">
@@ -43,81 +42,94 @@
             <div class="container">
                 <div class="row no-gutters">
                     <div class="col-lg-6">
-                        <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPO/faces/paginas/diagnosticopaciente/Create.xhtml">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Solicitar o Cancelar Cita</div>
-                                    <p class="mb-0">Permite al paciente agendar o eliminar una cita acordada</p>
-                                </div>
-                            </div>
-                            <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPO/faces/paginas/diagnosticopaciente/List.xhtml">
+                        <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPOO/JSP/AppointmentPacient.jsp">
                             <div class="caption">
                                 <div class="caption-content">
                                     <div class="h2">Ver citas</div>
-                                    <p class="mb-0">Listado de citas del paciente</p>
+                                    <p class="mb-0">Aquí puede consultar sus citas, además de solicitar o cancelar alguna si así lo desea.</p>
                                 </div>
                             </div>
                             <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
                         </a>
                     </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPO/faces/paginas/diagnosticopaciente/List.xhtml">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Diagnosticos asociados al paciente</div>
-                                    <p class="mb-0">Listado de diagnosticos asociados al paciente</p>
+                    
+                        <div class="col-lg-6">
+                            <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPOO/JSP/CreateAppointment.jsp">
+                                <div class="caption">
+                                    <div class="caption-content">
+                                        <div class="h2">Solicitar cita</div>
+                                        <p class="mb-0">Aquí puede solicitar una cita.</p>
+                                    </div>
                                 </div>
+                                <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
+                            </a>
+                        </div>
+                        
+                            <div class="col-lg-6">
+                                <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPOO/JSP/AppointmentCancelation.jsp">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <div class="h2">Cancelar cita</div>
+                                            <p class="mb-0">Aquí puede cancelar sus citas.</p>
+                                        </div>
+                                    </div>
+                                    <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
+                                </a>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPO/faces/paginas/diagnosticopaciente/List.xhtml">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Tratamientos asociados al paciente</div>
-                                    <p class="mb-0">Listado de tratamientos que le han medicado al paciente</p>
-                                </div>
+                            <div class="col-lg-6">
+                                <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPOO/JSP/DiagnosticPacient.jsp">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <div class="h2">Diagnosticos asociados al paciente</div>
+                                            <p class="mb-0">Listado de diagnosticos asociados al paciente</p>
+                                        </div>
+                                    </div>
+                                    <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
+                                </a>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
-                        </a>
-                    </div>
-                    <div class="col-lg-6">
-                        <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPO/faces/paginas/diagnosticopaciente/List.xhtml">
-                            <div class="caption">
-                                <div class="caption-content">
-                                    <div class="h2">Ver hospitalizaciones</div>
-                                    <p class="mb-0">Listado de hospitalizaciones del paciente</p>
-                                </div>
+                            <div class="col-lg-6">
+                                <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPOO/JSP/TreatmentPacient.jsp">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <div class="h2">Tratamientos asociados al paciente</div>
+                                            <p class="mb-0">Listado de tratamientos que le han medicado al paciente</p>
+                                        </div>
+                                    </div>
+                                    <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
+                                </a>
                             </div>
-                            <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
-                        </a>
+                            <div class="col-lg-6">
+                                <a class="portfolio-item" href="http://localhost:8080/SegundoProyectoPOO/JSP/HospitalizedPacient.jsp">
+                                    <div class="caption">
+                                        <div class="caption-content">
+                                            <div class="h2">Ver hospitalizaciones</div>
+                                            <p class="mb-0">Listado de hospitalizaciones del paciente</p>
+                                        </div>
+                                    </div>
+                                    <img class="img-fluid" src="img/portfolio-2.jpg" alt=""/>
+                                </a>
+                            </div>
+
+                        </div>
                     </div>
-
-                </div>
-            </div>
-        </section>
+                    </section>
 
 
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+                    <!-- Scroll to Top Button-->
+                    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+                        <i class="fas fa-angle-up"></i>
+                    </a>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <!-- Bootstrap core JavaScript -->
+                    <script src="vendor/jquery/jquery.min.js"></script>
+                    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                    <!-- Plugin JavaScript -->
+                    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-        <!-- Custom scripts for this template -->
-        <script src="js/stylish-portfolio.min.js"></script>
+                    <!-- Custom scripts for this template -->
+                    <script src="js/stylish-portfolio.min.js"></script>
 
-    </body>
-</html>
+                    </body>
+                    </html>

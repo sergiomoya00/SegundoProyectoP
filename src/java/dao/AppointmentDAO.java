@@ -114,7 +114,7 @@ public class AppointmentDAO {
 
         }
     }
-
+    
     /**
      * Método para eliminar los usuarios
      *
@@ -125,7 +125,42 @@ public class AppointmentDAO {
         try {
 
             ResultSet rs = null;
-            String login = "SELECT * FROM citas ";
+            String login = "SELECT * FROM citas WHERE cedulaPaciente=";
+            ps = cin.prepareStatement(login);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Appointment appointment = new Appointment();
+                appointment.setIdAppointment(rs.getInt("codigoCita"));
+                appointment.setIdPacient((Pacient) rs.getObject("codigoCita"));
+                appointment.setId(rs.getInt("cedulaFuncionario"));
+                appointment.setArea(rs.getString("area"));
+                appointment.setDate(rs.getString("fecha"));
+                appointment.setHour(rs.getString("hora"));
+                appointment.setObservation(rs.getString("observation"));
+                appointment.setCondition(rs.getString("estado"));
+                listAppointment.add(appointment);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+
+        }
+        return listAppointment;
+
+    }
+
+    /**
+     * Método para eliminar los usuarios
+     *
+     * @return
+     */
+    public List<Appointment> getAllAppointment(int id) {
+        List<Appointment> listAppointment = new ArrayList<>();
+        try {
+
+            ResultSet rs = null;
+            String login = "SELECT * FROM citas WHERE cedulaPaciente=" + id;
             ps = cin.prepareStatement(login);
             rs = ps.executeQuery();
 

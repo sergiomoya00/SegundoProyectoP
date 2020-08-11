@@ -23,10 +23,156 @@
             
             
         </action>
+        <action name="deleteCenters" class="operations.CenterController" method="delete">
+            <result name="success">/JSP/CenterList.jsp</result>
+            
+            
+        </action>
+        <action name="deleteCenters" class="operations.CenterController" method="delete">
+            <result name="success">/JSP/CenterDelete.jsp</result>
+            
+            
+        </action>
+        <action name="createworker" class="operations.WorkerController" method="execute">
+            <result name="success">/JSP/CreateWorker.jsp</result>
+            
+            
+        </action>
+        <action name="getworkers" class="operations.WorkerController" method="getAllWorkers">
+            <result name="success">/JSP/WorkerList.jsp</result>
+            
+            
+        </action>
+        <action name="deleteworkers" class="operations.WorkerController" method="delete">
+            <result name="success">/JSP/WorkerDelete.jsp</result>
+            
+            
+        </action>
+        <action name="gettreatments" class="operations.TreatmentsController" method="getAllTreatments">
+            <result name="success">/JSP/TreatmentsList.jsp</result>
+            
+            
+        </action>
+        <action name="createtreatments" class="operations.TreatmentsController" method="execute">
+            <result name="success">/JSP/CreateTreatments.jsp</result>
+            
+            
+        </action>
+        <action name="deleteTreatments" class="operations.TreatmentsController" method="delete">
+            <result name="success">/JSP/TreatmentsDelete.jsp</result>
+            
+            
+        </action>
+        <action name="createDiagnostics" class="operations.DiagnosticsController" method="execute">
+            <result name="success">/JSP/CreateDiagnostic.jsp</result>
+            
+            
+        </action>
+        <action name="getDiagnostics" class="operations.DiagnosticsController" method="getAllDiagnostics">
+            <result name="success">/JSP/DiagnosticList.jsp</result>
+            
+            
+        </action>
+        <action name="deleteDiagnostics" class="operations.DiagnosticsController" method="delete">
+            <result name="success">/JSP/DiagnosticDelete.jsp</result>
+            
+            
+        </action>
+        <action name="getUsers" class="operations.LoginController" method="getAllUsers">
+            <result name="success">/JSP/UserList.jsp</result>
+            
+            
+        </action>
+        <action name="userRegister" class="operations.LoginController" method="userRegister">
+            <result name="success">/JSP/UserRegister.jsp</result>
+            
+            
+        </action>
+        <action name="userDelete" class="operations.LoginController" method="delete">
+            <result name="success">/JSP/UserDelete.jsp</result>
+            
+            
+        </action>
+        <action name="createArea" class="operations.WorkerController" method="areaRegister">
+            <result name="success">/JSP/CreateArea.jsp</result>
+            
+            
+        </action>
+        <action name="createType" class="operations.CenterController" method="type">
+            <result name="success">/JSP/CenterTypeRegister.jsp</result>
+            
+            
+        </action>
+        <action name="appointmentCancelation" class="operations.AppointmentController" method="appointmentCancelation">
+            <result name="success">/JSP/AppointmentCancelation.jsp</result>
+            
+            
+        </action>
         <action name="registerpacient" class="operations.PacientController" method="execute">
             <result name="success">/JSP/PacientRegister.jsp</result>
             
             
         </action>
+        <action name="createAppointment" class="operations.AppointmentController" method="createAppointment">
+            <result name="success">/JSP/CreateAppointment.jsp</result>
+            
+            
+        </action>
+        <action name="appointmentDay" class="operations.DiagnosticsController" method="appointmentDay">
+            <result name="success">/JSP/AppointmentDay.jsp</result>
+            
+            
+        </action>
+        <action name="registerpacient" class="operations.PacientController" method="execute">
+            <result name="success">/JSP/PacientRegister.jsp</result>   
+            
+            
+        </action>
+        <action name="pacientAppointment" class="operations.AppointmentController" method="getAllAppointment">
+            <result name="success">/JSP/PacientAppointment.jsp</result>   
+            
+            
+        </action>
+        <action name="pacientDiagnostic" class="operations.DiagnosticsController" method="getAllPacientDiagnostics">
+            <result name="success">/JSP/PacientDiagnostics.jsp</result>   
+            
+            
+        </action>
+        <action name="getHospitalized" class="operations.HospitalizedController" method="getAllHospitalizedPacients">
+            <result name="success">/JSP/HospitalizedPacient.jsp</result>
+            
+            
+        </action>
+         <action name="getHospitalizedd" class="operations.HospitalizedController" method="getAllHospitalizedPacients">
+            
+             <param name="id">/1</param>
+             <result name="success">/JSP/HospitalizedPacient.jsp</result>
+            
+        </action>
+        <action name="getDiagnosticsQuantityFilter" class="operations.DiagnosticsController" method="getAllDiagnosticsQuantityFilter">
+            <result name="success">/JSP/AppointmentQuantity.jsp</result>
+            
+            
+        </action>
+        <action name="userPacientRegister" class="operations.DiagnosticsController" method="getAllDiagnosticsQuantityFilter">
+            <result name="success">/JSP/UserRegister.jsp</result>
+            
+            
+        </action>
+        <action name="email" class="dao.EmailNotification" method="sendEmail">
+            <result name="success">/JSP/PacientMenu.jsp</result>
+            
+            
+        </action>
+         <action name="userP">
+            <result>/JSP/UserRegister.jsp</result>
+            
+            
+        </action>
+        <action name="pacientR" class="operations.LoginController">
+            <result name="Paciente">/JSP/PacientRegister.jsp</result>
+           
+        </action>
+        
     </package>
 </struts>

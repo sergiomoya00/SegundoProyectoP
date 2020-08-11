@@ -8,6 +8,7 @@ package operations;
 import bean.Pacient;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import dao.DiagnosticsDAO;
 import dao.PacientDAO;
 import java.util.List;
 
@@ -31,6 +32,24 @@ public class PacientController extends ActionSupport {
     public String getAllCenters() {
         PacientDAO pacientD = new PacientDAO();
         this.list = pacientD.getAllPacients();
+        return SUCCESS;
+    }
+    
+    public String getPacientDiagnosticsFilter() {
+        PacientDAO usuario = new PacientDAO();
+        if (usuario.getAllDiagnosticsByName(pacient.getName()).size() > 0) {
+            this.list = usuario.getAllDiagnosticsByName(pacient.getName());
+        }
+        if (usuario.getAllDiagnosticsByLevel(pacient.getLevel()).size() > 0) {
+            this.list = usuario.getAllDiagnosticsByLevel(pacient.getLevel());
+        }
+        if (usuario.getAllDiagnosticsByPatient(pacient.getIdPatient()).size() > 0) {
+            this.list = usuario.getAllDiagnosticsByPatient(pacient.getIdPatient());
+        }
+        if (usuario.getAllDiagnosticsByDate(pacient.getDate()).size() > 0) {
+            this.list = usuario.getAllDiagnosticsByDate(pacient.getDate());
+        }
+
         return SUCCESS;
     }
 

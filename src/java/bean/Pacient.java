@@ -35,6 +35,10 @@ public class Pacient {
     public Pacient() {
     }
 
+    public Pacient(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -98,6 +102,5 @@ public class Pacient {
     public void setPhone(int phone) {
         this.phone = phone;
     }
-    
-    
+
 }

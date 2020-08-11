@@ -10,6 +10,14 @@ import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import dao.AppointmentDAO;
 import java.util.List;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 /**
  *
@@ -27,10 +35,16 @@ public class AppointmentController extends ActionSupport {
 
         return SUCCESS;
     }
-
+    
     public String getAllAppointment() {
         AppointmentDAO appointmentD = new AppointmentDAO();
         this.list = appointmentD.getAllAppointment();
+        return SUCCESS;
+    }
+
+    public String getAllAppointment(int id) {
+        AppointmentDAO appointmentD = new AppointmentDAO();
+        this.list = appointmentD.getAllAppointment(id);
         return SUCCESS;
     }
 

@@ -12,14 +12,16 @@ import dao.UserDAO;
  *
  * @author jabre
  */
-
 public class login {
 
     //Atributos necesarios para los metodos de la clase LogIn
     private String email;
     private String password;
     private String type;
-    
+
+    public login(String type) {
+        this.type = type;
+    }
 
     //Constructor vacío de la clase LogIn
     public login() {

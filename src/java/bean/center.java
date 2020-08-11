@@ -9,27 +9,27 @@ import dao.CenterDAO;
 import java.util.ArrayList;
 import java.util.List;
 
-
 /**
  *
  * @author jabre
  */
-
 public class center {
-    
+
     //Atributos necesarios para los metodos de la clase Center  
-    
     private String name;
     private String ubication;
     private int capacity;
     private String type;
     private int id;
 
-    
     //Constructor vacío de la clase
     public center() {
     }
-    
+
+    public center(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
@@ -69,7 +69,5 @@ public class center {
     public void setType(String type) {
         this.type = type;
     }
-    
-  
 
 }

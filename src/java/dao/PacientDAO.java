@@ -163,4 +163,34 @@ public class PacientDAO {
         return pacientList;
 
     }
+    
+    public List<Pacient> getAllPacientsByLevel() {
+        List<Pacient> pacientList = new ArrayList<>();
+        try {
+
+            ResultSet rs = null;
+            String login = "SELECT * FROM ";
+            ps = cin.prepareStatement(login);
+            rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Pacient pacient = new Pacient();
+                pacient.setId(rs.getInt("cedula"));
+                pacient.setName(rs.getString("nombre"));
+                pacient.setBirthDay(rs.getString("fechaNacimiento"));
+                pacient.setBloodType(rs.getString("tipoSangre"));
+                pacient.setNationality(rs.getString("nacionalidad"));
+                pacient.setProvince(rs.getString("provincia"));
+                pacient.setCanton(rs.getString("canton"));
+                pacient.setPhone(rs.getInt("telefono"));
+                pacientList.add(pacient);
+            }
+            ps.close();
+
+        } catch (SQLException ex) {
+
+        }
+        return pacientList;
+
+    }
 }

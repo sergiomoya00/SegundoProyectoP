@@ -26,8 +26,8 @@ public class LIGAOSTOK {
         
         System.out.print(u.getAllCenters().get(0));
         
-        
-        
+        SMS sms = new SMS();
+        sms.enviarSMS(70445772);   
         
     }
     
